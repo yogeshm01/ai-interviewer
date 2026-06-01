@@ -7,8 +7,6 @@ langgraph
 langchain-community
 langchain-core
 langchain-groq
-scikit-learn
 pypdf
 python-multipart
-sentence-transformers
 langchain-text-splitters
