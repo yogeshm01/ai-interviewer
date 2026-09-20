@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv(override=True)
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-MODEL_NAME = os.getenv("MODEL_NAME")
+MODEL_NAME = os.getenv("MODEL_NAME") or "openai/gpt-oss-20b"

@@ -1,13 +1,10 @@
 import os
 from dotenv import load_dotenv
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 load_dotenv()
 
-hf_token = os.getenv("HF_TOKEN") or os.getenv("HUGGINGFACE_API_KEY")
-
-embedding_model = HuggingFaceInferenceAPIEmbeddings(
-    api_key=hf_token or "DUMMY_KEY_PLEASE_SET_HF_TOKEN",
-    api_url="https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2",
+embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
+
