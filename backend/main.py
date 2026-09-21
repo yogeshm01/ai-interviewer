@@ -16,11 +16,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+if os.getenv("FRONTEND_URL"):
+    origins.append(os.getenv("FRONTEND_URL"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000"
-    ],
+    allow_origins=["*"] if not os.getenv("FRONTEND_URL") else origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
