@@ -10,3 +10,8 @@ services:
         value: 3.10.16
       - key: MODEL_NAME
         value: openai/gpt-oss-20b
+      - key: GROQ_API_KEY
+        sync: false
+      - key: HF_TOKEN
+        sync: false
+
